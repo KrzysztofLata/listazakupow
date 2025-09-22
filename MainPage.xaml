@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.MainPage"
+              Style="{StaticResource bckGrn}">
+
+    <Grid HorizontalOptions="Center" RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*" WidthRequest="300" HeightRequest="700" VerticalOptions="Start">
+        <Label Text="Lista zakupów" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" HorizontalTextAlignment="Center" FontSize="22"></Label>
+        <Entry x:Name="additem" WidthRequest="170" HeightRequest="50" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"></Entry>
+        <Entry x:Name="setquantity" WidthRequest="20" HeightRequest="50" Grid.Column="3" Grid.Row="0"></Entry>
+        <Button Style="{StaticResource btnStyle}" Clicked="AddBtn_Clicked" Text="Dodaj" WidthRequest="90" HeightRequest="50" Grid.Column="0" Grid.Row="3" FontSize="18" BorderColor="Black"></Button>
+        <CollectionView Style="{StaticResource labStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2" x:Name="collectionview" ItemsSource="{Binding Products}" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="*,*" Padding="10">
+                        <Label Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" />
+                        <Label Grid.Column="1" Text="{Binding Quantity}" VerticalOptions="Center" HorizontalOptions="End" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Clicked="DelBtn_Clicked" Text="Usuń" WidthRequest="90" HeightRequest="50" Grid.Column="3" Grid.Row="4" FontSize="18" BorderColor="Black"></Button>
+    </Grid> 
+</ContentPage>
