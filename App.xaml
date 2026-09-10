@@ -14,7 +14,7 @@
                 <Setter Property="TextColor" Value="White"></Setter>
             </Style>
             <Style x:Key="bckGrn" TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="Aqua"></Setter>
+                <Setter Property="BackgroundColor" Value="Aquamarine"></Setter>
             </Style>
             <Style x:Name="labStyle" TargetType="CollectionView">
                 <Setter Property="BackgroundColor" Value="White"></Setter>

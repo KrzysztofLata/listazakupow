@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using ZXing.Net.Maui.Controls;
 
 namespace MauiApp2
 {
@@ -9,6 +10,7 @@ namespace MauiApp2
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseBarcodeReader()          // rejestracja ZXing.Net.Maui
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -16,7 +18,7 @@ namespace MauiApp2
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
